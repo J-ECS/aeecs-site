@@ -1,4 +1,4 @@
-# Espace d'administration du site AE-ECS (Decap CMS)
+# Espace d'administration du site AE-ECS (Sveltia CMS)
 backend:
   name: github
   repo: J-ECS/aeecs-site
@@ -9,11 +9,11 @@ backend:
     deleteMedia: "Suppression de l'image {{path}}"
 
 locale: fr
-site_url: https://aeecs.ci
-display_url: https://aeecs.ci
+site_url: https://aeecs.juniorecsentreprise.workers.dev
+display_url: https://aeecs.juniorecsentreprise.workers.dev
 logo_url: /images/brand/logo-aeecs.png
 
-media_folder: images/activites
+media_folder: aeecs-site (2)/images/activites
 public_folder: /images/activites
 
 collections:
@@ -25,7 +25,7 @@ collections:
 
       - name: activites
         label: Nos activités (photos et vidéos)
-        file: content/activites.json
+        file: aeecs-site (2)/content/activites.json
         fields:
           - { name: introduction, label: "Texte d'introduction", widget: text, required: false }
           - name: activites
@@ -51,7 +51,7 @@ collections:
 
       - name: evenements
         label: Agenda (bannière « À l'affiche »)
-        file: content/evenements.json
+        file: aeecs-site (2)/content/evenements.json
         fields:
           - name: evenements
             label: Événements datés
@@ -72,12 +72,12 @@ collections:
                 required: false
                 options: ["Intégration", "Conférence", "Rencontre professionnelle", "Formation", "Cérémonie", "Sport et culture", "Solidarité", "Gala", "Actualité"]
               - { name: description, label: "Description courte", widget: text, required: false }
-              - { name: image, label: "Image (format paysage)", widget: image, required: false, choose_url: false, media_folder: "/images/evenements", public_folder: "/images/evenements" }
+              - { name: image, label: "Image (format paysage)", widget: image, required: false, choose_url: false, media_folder: "/aeecs-site (2)/images/evenements", public_folder: "/images/evenements" }
               - { name: lien, label: "Lien (inscription, billetterie, article)", widget: string, required: false }
 
       - name: alumni
         label: Nos alumni
-        file: content/alumni.json
+        file: aeecs-site (2)/content/alumni.json
         fields:
           - { name: introduction, label: "Texte d'introduction", widget: text, required: false }
           - name: alumni
@@ -92,13 +92,13 @@ collections:
               - { name: promotion, label: "Promotion (ex. 2019)", widget: string, required: false }
               - { name: poste, label: "Poste actuel", widget: string, required: false }
               - { name: entreprise, label: "Entreprise", widget: string, required: false }
-              - { name: photo, label: "Photo", widget: image, required: false, choose_url: false, media_folder: "/images/alumni", public_folder: "/images/alumni" }
+              - { name: photo, label: "Photo", widget: image, required: false, choose_url: false, media_folder: "/aeecs-site (2)/images/alumni", public_folder: "/images/alumni" }
               - { name: citation, label: "Message aux étudiants (facultatif)", widget: text, required: false }
               - { name: linkedin, label: "Lien LinkedIn", widget: string, required: false }
 
       - name: partenaires
         label: Nos partenaires
-        file: content/partenaires.json
+        file: aeecs-site (2)/content/partenaires.json
         fields:
           - { name: introduction, label: "Texte d'introduction", widget: text, required: false }
           - name: partenaires
@@ -116,12 +116,12 @@ collections:
                 required: false
                 options: ["Partenaire officiel", "Sponsor", "Cabinet partenaire", "Entreprise partenaire", "Institution", "Partenaire média"]
               - { name: description, label: "Ce que nous faisons ensemble (1 phrase)", widget: string, required: false }
-              - { name: logo, label: "Logo (fond transparent de préférence)", widget: image, required: false, choose_url: false, media_folder: "/images/partenaires", public_folder: "/images/partenaires" }
+              - { name: logo, label: "Logo (fond transparent de préférence)", widget: image, required: false, choose_url: false, media_folder: "/aeecs-site (2)/images/partenaires", public_folder: "/images/partenaires" }
               - { name: site, label: "Site web", widget: string, required: false }
 
       - name: bureau
         label: Bureau
-        file: content/bureau.json
+        file: aeecs-site (2)/content/bureau.json
         fields:
           - { name: mandat, label: "Mandat (ex. 2026-2027). Vide = masqué.", widget: string, required: false }
           - { name: introduction, label: "Texte de présentation", widget: text, required: false }
@@ -135,12 +135,12 @@ collections:
               - { name: nom, label: "Nom et prénoms", widget: string }
               - { name: poste, label: "Poste", widget: string, required: false }
               - { name: promotion, label: "Promotion ou année", widget: string, required: false }
-              - { name: photo, label: "Photo (portrait carré)", widget: image, required: false, choose_url: false, media_folder: "/images/bureau", public_folder: "/images/bureau" }
+              - { name: photo, label: "Photo (portrait carré)", widget: image, required: false, choose_url: false, media_folder: "/aeecs-site (2)/images/bureau", public_folder: "/images/bureau" }
               - { name: linkedin, label: "Lien LinkedIn", widget: string, required: false }
 
       - name: formation
         label: Formation ECS
-        file: content/formation.json
+        file: aeecs-site (2)/content/formation.json
         fields:
           - { name: presentation, label: "Présentation du cycle", widget: text }
           - name: infos
@@ -158,7 +158,7 @@ collections:
 
       - name: infos
         label: Informations générales et contacts
-        file: content/site.json
+        file: aeecs-site (2)/content/site.json
         fields:
           - { name: accroche, label: "Titre principal de l'accueil", widget: string }
           - { name: presentation, label: "Texte sous le titre", widget: text }
