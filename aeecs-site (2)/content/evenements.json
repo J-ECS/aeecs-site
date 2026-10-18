@@ -10,6 +10,17 @@
       "description": "",
       "image": "/images/evenements/Screenshot 2026-10-18 190705.png",
       "lien": ""
+    },
+    {
+      "titre": "Journée Sportive",
+      "date": "2026-12-22",
+      "date_fin": "",
+      "heure": "",
+      "lieu": "Cocody, Temple du foot",
+      "categorie": "",
+      "description": "",
+      "image": "/images/evenements/d_lightbox.png",
+      "lien": ""
     }
   ]
 }
