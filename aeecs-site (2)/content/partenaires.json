@@ -22,13 +22,5 @@
     "/images/partenaires/totalenergies.png",
     "/images/partenaires/unilever.png"
   ],
-  "partenaires": [
-    {
-      "nom": "Nos partenaires",
-      "type": "Partenaire officiel",
-      "description": "",
-      "logo": "",
-      "site": ""
-    }
-  ]
+  "partenaires": []
 }
