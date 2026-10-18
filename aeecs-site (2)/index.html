@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AE-ECS — Association des Étudiants des Études Comptables Supérieures | INP-HB</title>
+<meta name="description" content="L'AE-ECS rassemble les étudiants du cycle Études Comptables Supérieures de l'ESCAE / INP-HB : activités, agenda, formation, alumni et partenaires.">
+<link rel="canonical" href="https://aeecs.ci/">
+<meta name="theme-color" content="#02083A">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aeecs.ci/">
+<meta property="og:title" content="AE-ECS — Association des Étudiants des ECS de l'INP-HB">
+<meta property="og:description" content="La communauté des étudiants en Études Comptables Supérieures de l'ESCAE / INP-HB : activités, agenda, alumni et partenaires.">
+<meta property="og:image" content="https://aeecs.ci/og-image.png">
+<meta property="og:locale" content="fr_CI">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/images/brand/logo-aeecs-64.png" type="image/png">
+<link rel="apple-touch-icon" href="/images/brand/logo-aeecs-square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"AE-ECS — Association des Étudiants des Études Comptables Supérieures","url":"https://aeecs.ci/","logo":"https://aeecs.ci/images/brand/logo-aeecs.png","address":{"@type":"PostalAddress","addressLocality":"Yamoussoukro","addressCountry":"CI"},"subOrganization":{"@type":"Organization","name":"J-ECS — Junior Entreprise ECS"}}
+</script>
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --brand:#010E76;--ink:#02083A;--night:#0B1B3A;--navy:#1D3557;--steel:#2C4F71;
+  --primary:#0E549A;--primary-dark:#0A3F75;--accent:#2563EB;--sky:#93C5FD;--sky-2:#BFDBFE;--live:#22C55E;
+  --icon-bg:#DBEAFE;--tint:#EFF6FF;--bg:#F7F9FC;
+  --text:#1F2937;--muted:#4B5563;--soft:#6B7280;--line:#E3E9F2;--footer:#111827;
+  --on-dark:#C8D6E8;--on-dark-2:#A9BCD3;
+  --r-lg:20px;--r:14px;--r-sm:10px;--wrap:1200px;
+  --display:Sora,"Segoe UI",system-ui,sans-serif;--body:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 12px 32px -18px rgba(29,53,87,.28);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+h1,h2,h3,h4{font-family:var(--display);color:var(--navy);letter-spacing:-.02em;margin:0}
+p{margin:0}img{max-width:100%;display:block}a{color:inherit}button{font:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+@media (max-width:600px){.wrap{padding:0 18px}}
+[hidden]{display:none!important}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;text-decoration:none;font-weight:600;font-size:16px;line-height:1;border-radius:12px;padding:16px 24px;border:1.5px solid transparent;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.btn svg{width:18px;height:18px;transition:transform .18s}
+.btn:hover svg.go{transform:translateX(3px)}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 10px 24px -12px rgba(14,84,154,.7)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-light{background:#fff;color:var(--brand);box-shadow:0 14px 30px -14px rgba(0,0,0,.6)}
+.btn-light:hover{background:var(--tint)}
+.btn-ghost-light{color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-ghost-light:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-ghost{color:var(--navy);border-color:var(--line);background:#fff}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+.btn-sm{padding:11px 16px;font-size:15px}
+
+/* ---------- En-tête ---------- */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .25s,box-shadow .25s;border-bottom:1px solid transparent}
+.site-header.scrolled{background:rgba(255,255,255,.94);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom-color:var(--line);box-shadow:0 6px 24px -18px rgba(2,8,58,.35)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.badge{display:inline-grid;place-items:center;background:#fff;border-radius:12px;padding:6px 9px;box-shadow:0 6px 16px -8px rgba(0,0,0,.45)}
+.brand .badge img{height:34px;width:auto}
+.scrolled .brand .badge{box-shadow:0 0 0 1px var(--line)}
+.brand-name{display:block;font-family:var(--display);font-weight:700;font-size:21px;line-height:1;color:#fff;transition:color .25s}
+.brand-sub{display:block;font-size:13px;color:var(--sky);margin-top:5px;transition:color .25s}
+.scrolled .brand-name{color:var(--navy)}.scrolled .brand-sub{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0}
+.nav-links a:not(.btn){display:block;text-decoration:none;font-size:15px;font-weight:500;color:rgba(255,255,255,.84);padding:9px 11px;border-radius:10px;transition:color .2s,background .2s}
+.nav-links a:not(.btn):hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-links a.active{color:#fff;background:rgba(255,255,255,.12)}
+.scrolled .nav-links a:not(.btn){color:var(--muted)}
+.scrolled .nav-links a:not(.btn):hover{color:var(--navy);background:var(--tint)}
+.scrolled .nav-links a.active{color:var(--primary);background:var(--tint)}
+.nav-links .btn{margin-left:8px;padding:12px 18px;font-size:15px}
+.site-header:not(.scrolled) .nav-links .btn{background:#fff;color:var(--brand);box-shadow:none}
+.nav-toggle{display:none;background:none;border:0;padding:10px;margin-right:-10px;cursor:pointer;color:#fff}
+.scrolled .nav-toggle{color:var(--navy)}
+@media (max-width:1180px){
+  .nav-toggle{display:block}
+  .nav-links{position:absolute;top:78px;left:12px;right:12px;flex-direction:column;align-items:stretch;gap:2px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:10px;display:none;box-shadow:0 24px 48px -20px rgba(2,8,58,.45)}
+  .nav-links.open{display:flex}
+  .nav-links a:not(.btn),.scrolled .nav-links a:not(.btn){color:var(--text);padding:13px 14px}
+  .nav-links a.active,.scrolled .nav-links a.active{color:var(--primary);background:var(--tint)}
+  .nav-links .btn,.site-header:not(.scrolled) .nav-links .btn{margin:8px 0 0;background:var(--primary);color:#fff;padding:15px}
+}
+@media (max-width:420px){.brand-sub{display:none}}
+
+/* ---------- Accueil ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;padding:146px 0 92px;
+  background:repeating-linear-gradient(180deg,transparent 0 47px,rgba(147,197,253,.06) 47px 48px),
+    radial-gradient(760px 460px at 86% 18%,rgba(37,99,235,.30),transparent 60%),
+    radial-gradient(900px 500px at 8% 100%,rgba(1,14,118,.55),transparent 60%),
+    linear-gradient(160deg,var(--ink) 0%,var(--night) 45%,var(--steel) 100%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--display);font-size:15px;font-weight:500;color:var(--sky);margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--sky);border-radius:2px}
+.now{display:inline-flex;align-items:center;gap:10px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.4);color:#DCFCE7;border-radius:999px;padding:7px 14px 7px 12px;font-size:14.5px;font-weight:500;margin-bottom:22px;text-decoration:none;max-width:100%}
+.now b{color:#fff;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--live);flex:none;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.55)}70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.hero h1{color:#fff;font-size:clamp(36px,5vw,62px);line-height:1.05;letter-spacing:-.035em;font-weight:600;margin-bottom:22px;max-width:17ch;text-wrap:balance}
+.hero .lede{font-size:clamp(17px,1.5vw,19px);color:var(--on-dark);max-width:52ch;margin-bottom:34px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:1020px){.hero-grid{grid-template-columns:1fr;gap:48px}.hero{padding:122px 0 72px}}
+
+/* Bannière À l'affiche */
+.affiche{background:#fff;color:var(--text);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.65)}
+.aff-head{display:flex;align-items:center;gap:10px;padding:14px 16px 14px 20px;border-bottom:1px solid var(--line)}
+.aff-head b{font-family:var(--display);font-weight:600;color:var(--navy);font-size:15.5px}
+.aff-head .count{font-size:13px;color:var(--soft);margin-left:4px}
+.aff-ctrl{margin-left:auto;display:flex;gap:6px}
+.aff-ctrl button{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--navy);display:grid;place-items:center;cursor:pointer}
+.aff-ctrl button:hover{border-color:var(--primary);color:var(--primary)}
+.aff-ctrl svg{width:18px;height:18px}
+.aff-track{position:relative}
+.slide{display:none}
+.slide.on{display:block}
+@media (prefers-reduced-motion:no-preference){.slide.on{animation:fade .5s ease}}
+@keyframes fade{from{opacity:.25}to{opacity:1}}
+.slide .pic{aspect-ratio:16/8.4;position:relative;background:linear-gradient(150deg,var(--brand),var(--steel));overflow:hidden}
+.slide .pic img{width:100%;height:100%;object-fit:cover}
+.slide .pic .ph{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.25)}
+.slide .pic .ph svg{width:72px;height:72px}
+.status{position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(2,8,58,.78);backdrop-filter:blur(6px);color:#fff;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600}
+.status.live{background:rgba(21,128,61,.9)}
+.status.live .dot{background:#fff}
+.slide .info{padding:18px 20px 20px}
+.slide .when{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;color:var(--soft);margin-bottom:6px}
+.slide .when span{display:inline-flex;align-items:center;gap:6px}
+.slide .when svg{width:15px;height:15px}
+.slide h3{font-size:21px;line-height:1.25;font-weight:600;margin-bottom:6px}
+.slide p{color:var(--muted);font-size:15.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.slide .act{display:flex;gap:10px;margin-top:14px}
+.aff-dots{display:flex;justify-content:center;gap:6px;padding:0 0 16px}
+.aff-dots button{width:8px;height:8px;border-radius:999px;border:0;background:#CBD5E1;padding:0;cursor:pointer;transition:width .25s,background .25s}
+.aff-dots button[aria-current="true"]{width:22px;background:var(--primary)}
+/* Ordre du jour (sans événement) */
+.agenda{background:#fff;color:var(--text);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.65)}
+.agenda-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 22px;border-bottom:2px solid var(--primary);background:linear-gradient(180deg,#F5F9FF,#EAF2FD)}
+.agenda-head b{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:16px;color:var(--navy);font-weight:600}
+.agenda-head b img{height:24px;width:auto}
+.agenda-head span{font-size:13px;color:var(--primary);font-weight:600}
+.agenda ol{list-style:none;margin:0;padding:6px 22px 4px;counter-reset:pt}
+.agenda li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid #EDF2F8;counter-increment:pt}
+.agenda li:last-child{border-bottom:0}
+.agenda li::before{content:counter(pt);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;font-family:var(--display);font-weight:600;font-size:15px}
+.agenda li b{display:block;font-family:var(--display);color:var(--navy);font-weight:600;font-size:16.5px}
+.agenda li span{font-size:14.5px;color:var(--muted)}
+.agenda-foot{display:flex;justify-content:space-between;align-items:center;padding:14px 0 20px;margin:0 22px;font-family:var(--display);font-size:14px;color:var(--navy);border-top:4px double var(--primary)}
+.agenda-foot em{font-style:normal;color:var(--accent);font-weight:600}
+
+/* ---------- Sections ---------- */
+section{scroll-margin-top:90px}
+.section{padding:112px 0}
+.section.white{background:#fff}
+.section.dark{background:linear-gradient(170deg,var(--ink),var(--night) 55%,#14284A);color:var(--on-dark);position:relative;overflow:hidden}
+.section.dark::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 47px,rgba(147,197,253,.05) 47px 48px);pointer-events:none}
+.section.dark .wrap{position:relative}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:52px}
+.sec-head.center{display:block;text-align:center;max-width:720px;margin-left:auto;margin-right:auto}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-size:14.5px;font-weight:500;color:var(--primary);margin:0 0 14px}
+.kicker::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+.dark .kicker{color:var(--sky)}
+.sec-head h2{font-size:clamp(32px,4vw,50px);line-height:1.08;font-weight:600;text-wrap:balance}
+.dark .sec-head h2{color:#fff}
+.sec-head .lead{color:var(--muted);font-size:clamp(17px,1.5vw,19px);max-width:52ch}
+.dark .sec-head .lead{color:var(--on-dark-2)}
+.sec-head.center .lead{margin:16px auto 0}
+@media (max-width:860px){.section{padding:80px 0}.sec-head{grid-template-columns:1fr;gap:16px;margin-bottom:38px}}
+
+/* Association */
+.assoc{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+.assoc-text h2{font-size:clamp(32px,4vw,48px);line-height:1.08;font-weight:600;margin-bottom:26px}
+#about-text p{color:var(--muted);margin-bottom:18px;max-width:62ch}
+#about-text p:first-child{color:var(--text);font-size:18.5px;font-weight:500}
+.pillars{display:grid;gap:14px}
+.pillar{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+.ico{width:54px;height:54px;border-radius:14px;background:var(--icon-bg);color:var(--primary);display:grid;place-items:center;flex:none}
+.ico svg{width:26px;height:26px}
+.pillar h3{font-size:18.5px;font-weight:600;margin-bottom:4px}
+.pillar p{color:var(--muted);font-size:15.5px}
+@media (max-width:980px){.assoc{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- Activités (galerie) ---------- */
+.acts{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:260px;gap:18px}
+.act-card{position:relative;border:0;padding:0;border-radius:var(--r-lg);overflow:hidden;cursor:pointer;text-align:left;color:#fff;background:linear-gradient(150deg,var(--brand),var(--steel));isolation:isolate;box-shadow:0 24px 48px -28px rgba(0,0,0,.8)}
+.act-card:first-child{grid-column:span 2;grid-row:span 2}
+.act-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.act-card:hover img,.act-card:focus-visible img{transform:scale(1.05)}
+.act-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(2,8,58,0) 35%,rgba(2,8,58,.92) 100%)}
+.act-card .ph{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.18);z-index:-1}
+.act-card .ph svg{width:80px;height:80px}
+.act-card .txt{position:absolute;left:0;right:0;bottom:0;padding:22px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:4px 10px;font-size:12.5px;font-weight:600;color:#fff}
+.chip svg{width:13px;height:13px}
+.act-card h3{color:#fff;font-size:21px;line-height:1.2;font-weight:600}
+.act-card:first-child h3{font-size:clamp(24px,2.6vw,32px)}
+.act-card .desc{color:#D6E3F0;font-size:15px;margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.act-card:not(:first-child) .desc{display:none}
+.act-card .open{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-weight:600;font-size:14.5px;color:var(--sky)}
+.act-card .open svg{width:16px;height:16px}
+@media (max-width:980px){.acts{grid-template-columns:1fr 1fr;grid-auto-rows:230px}.act-card:first-child{grid-column:span 2;grid-row:span 1}}
+@media (max-width:600px){.acts{grid-template-columns:1fr;grid-auto-rows:240px}.act-card:first-child{grid-column:auto}}
+
+/* Visionneuse */
+dialog.viewer{border:0;padding:0;width:min(1100px,100vw - 32px);max-height:calc(100vh - 32px);border-radius:var(--r-lg);background:#fff;color:var(--text);box-shadow:0 40px 100px -20px rgba(0,0,0,.7);overflow:hidden}
+dialog.viewer::backdrop{background:rgba(2,8,58,.82);backdrop-filter:blur(4px)}
+.v-head{display:flex;align-items:flex-start;gap:16px;padding:22px 24px 16px;border-bottom:1px solid var(--line)}
+.v-head h3{font-size:clamp(20px,2.4vw,26px);font-weight:600;line-height:1.2}
+.v-head .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.v-head .meta span{background:var(--tint);color:var(--primary);border-radius:999px;padding:3px 10px;font-size:13px;font-weight:600}
+.v-close{margin-left:auto;flex:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;color:var(--navy)}
+.v-close:hover{border-color:var(--primary);color:var(--primary)}
+.v-close svg{width:20px;height:20px}
+.v-body{overflow:auto;max-height:calc(100vh - 32px - 100px);padding:20px 24px 28px}
+.v-desc{color:var(--muted);max-width:75ch;margin-bottom:20px}
+.v-tabs{display:inline-flex;gap:4px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:18px}
+.v-tabs button{border:0;background:none;padding:9px 16px;border-radius:9px;font-weight:600;color:var(--muted);cursor:pointer}
+.v-tabs button[aria-selected="true"]{background:var(--brand);color:#fff}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.thumbs button{border:0;padding:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3;cursor:zoom-in;background:var(--tint)}
+.thumbs img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.thumbs button:hover img{transform:scale(1.05)}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.vid{border-radius:12px;overflow:hidden;background:#000;aspect-ratio:16/9}
+.vid iframe,.vid video{width:100%;height:100%;border:0;display:block}
+.vid-link{display:flex;align-items:center;justify-content:center;gap:10px;aspect-ratio:16/9;border-radius:12px;background:linear-gradient(150deg,var(--brand),var(--steel));color:#fff;text-decoration:none;font-weight:600}
+.vid-link svg{width:28px;height:28px}
+.lb{position:relative;background:#050A24;border-radius:14px;overflow:hidden}
+.lb img{width:100%;max-height:calc(100vh - 260px);object-fit:contain;margin:0 auto}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:var(--navy);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 20px -8px rgba(0,0,0,.6)}
+.lb-nav:hover{background:#fff}
+.lb-nav svg{width:22px;height:22px}
+.lb-prev{left:12px}.lb-next{right:12px}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}
+.lb-bar button{background:none;border:0;color:var(--primary);font-weight:600;cursor:pointer;display:inline-flex;gap:6px;align-items:center;padding:8px 2px}
+.lb-bar button svg{width:16px;height:16px}
+.lb-bar span{color:var(--soft);font-size:14.5px}
+@media (max-width:600px){dialog.viewer{width:100vw;max-width:100vw;max-height:100vh;height:100vh;border-radius:0}.v-body{max-height:calc(100vh - 100px)}.v-head,.v-body{padding-left:16px;padding-right:16px}.thumbs{grid-template-columns:repeat(2,1fr)}.videos{grid-template-columns:1fr}}
+
+/* ---------- Agenda ---------- */
+.ev-tabs{display:inline-flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:26px}
+.ev-tabs button{border:0;background:none;padding:10px 18px;border-radius:9px;font-weight:600;color:var(--muted);cursor:pointer}
+.ev-tabs button[aria-selected="true"]{background:var(--brand);color:#fff}
+.ev-list{display:grid;gap:14px}
+.ev{display:grid;grid-template-columns:96px 1fr auto;gap:22px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 22px 18px 18px;box-shadow:var(--shadow)}
+.ev .date{text-align:center;background:var(--brand);color:#fff;border-radius:14px;padding:12px 0;font-family:var(--display);line-height:1.1}
+.ev .date b{display:block;font-size:30px;font-weight:600}
+.ev .date span{font-size:13px;font-weight:500;color:var(--sky-2)}
+.ev.past .date{background:#E2E8F0;color:var(--navy)}
+.ev.past .date span{color:var(--soft)}
+.ev .tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--primary);margin-bottom:4px}
+.ev .tag.live{color:#15803D}
+.ev h3{font-size:19px;font-weight:600;line-height:1.3}
+.ev .meta{display:flex;flex-wrap:wrap;gap:4px 16px;color:var(--soft);font-size:14.5px;margin-top:4px}
+.ev .meta span{display:inline-flex;align-items:center;gap:6px}
+.ev .meta svg{width:15px;height:15px}
+.ev p{color:var(--muted);font-size:15.5px;margin-top:6px}
+@media (max-width:700px){.ev{grid-template-columns:72px 1fr;gap:14px;padding:16px}.ev .date b{font-size:24px}.ev .go-col{grid-column:1/-1}}
+.empty{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;background:#fff;border:1.5px dashed #C9D5E6;border-radius:var(--r-lg);padding:28px}
+.empty h3{font-size:19px;font-weight:600;margin-bottom:4px}
+.empty p{color:var(--muted)}
+@media (max-width:700px){.empty{grid-template-columns:1fr}}
+
+/* Formation */
+.formation{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.f-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;box-shadow:var(--shadow)}
+.f-card h3{font-size:21px;font-weight:600;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.f-card h3 svg{width:26px;height:26px;color:var(--primary)}
+.f-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.f-list li{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);font-weight:500}
+.f-list svg{width:20px;height:20px;color:#3B82F6;flex:none}
+.facts-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));background:var(--brand);border-radius:var(--r-lg);overflow:hidden}
+.facts-row div{padding:24px 28px;color:var(--on-dark)}
+.facts-row div + div{border-left:1px solid rgba(147,197,253,.22)}
+.facts-row small{display:block;color:var(--sky);font-weight:600;font-size:13.5px;margin-bottom:6px}
+.facts-row b{display:block;color:#fff;font-family:var(--display);font-size:20px;font-weight:600;line-height:1.3}
+.f-cta{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;background:var(--tint);border:1px solid #D6E6FB;border-radius:var(--r-lg);padding:22px 26px}
+.f-cta p{font-weight:500;max-width:60ch}
+.f-cta div{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:860px){.formation{grid-template-columns:1fr}.f-card{padding:24px 20px}.facts-row div + div{border-left:0;border-top:1px solid rgba(147,197,253,.22)}}
+
+/* Personnes (bureau, alumni) */
+.people{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.person{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:28px 20px 24px;text-align:center;transition:transform .2s,box-shadow .2s}
+.person:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.avatar{width:124px;height:124px;border-radius:50%;margin:0 auto 18px;overflow:hidden;background:var(--brand);display:grid;place-items:center;box-shadow:0 0 0 5px var(--tint),0 0 0 6px var(--line)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar .initials{font-family:var(--display);font-size:40px;font-weight:600;color:#fff}
+.person h3{font-size:18px;line-height:1.3;font-weight:600}
+.person .role{display:block;color:var(--primary);font-weight:600;font-size:14.5px;margin-top:6px}
+.person .sub{display:block;color:var(--soft);font-size:14px;margin-top:2px}
+.person a.li{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:9px;background:var(--icon-bg);color:var(--primary);margin-top:14px}
+.person a.li:hover{background:var(--primary);color:#fff}
+.mandat{display:inline-block;font-size:14px;font-weight:600;color:var(--primary);background:var(--icon-bg);border-radius:999px;padding:4px 14px;margin-top:14px}
+@media (max-width:1060px){.people{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.people{grid-template-columns:1fr 1fr;gap:14px}.person{padding:20px 10px 18px}.avatar{width:92px;height:92px}.person h3{font-size:15.5px}}
+
+/* Alumni */
+.alumni{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:28px}
+.alum{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.alum-top{display:flex;gap:16px;align-items:center}
+.alum .avatar{width:72px;height:72px;margin:0;box-shadow:0 0 0 4px var(--tint)}
+.alum .avatar .initials{font-size:24px}
+.alum h3{font-size:17.5px;font-weight:600;line-height:1.3}
+.alum .promo{display:inline-block;margin-top:4px;font-size:12.5px;font-weight:600;color:#fff;background:var(--brand);border-radius:999px;padding:2px 10px}
+.alum .job{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
+.alum .job b{color:var(--navy);font-weight:600}
+.alum blockquote{margin:14px 0 0;padding-left:14px;border-left:3px solid var(--sky);color:var(--text);font-size:15.5px;font-style:italic}
+.alum a.li{margin-top:auto;padding-top:16px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:var(--primary);text-decoration:none}
+.alum a.li svg{width:16px;height:16px}
+.join{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;background:linear-gradient(160deg,var(--ink),var(--navy));color:var(--on-dark);border-radius:var(--r-lg);padding:40px;position:relative;overflow:hidden}
+.join::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 39px,rgba(147,197,253,.06) 39px 40px)}
+.join > *{position:relative}
+.join h3{color:#fff;font-size:clamp(24px,2.6vw,32px);font-weight:600;line-height:1.15;margin-bottom:12px}
+.join .ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.join .ul li{display:flex;gap:10px;align-items:center}
+.join .ul svg{width:20px;height:20px;color:var(--sky);flex:none}
+.join form{background:#fff;border-radius:var(--r);padding:24px;color:var(--text)}
+@media (max-width:980px){.alumni{grid-template-columns:1fr 1fr}.join{grid-template-columns:1fr;padding:28px 20px}}
+@media (max-width:640px){.alumni{grid-template-columns:1fr}}
+
+/* Partenaires */
+.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.logo-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 18px;text-decoration:none;transition:box-shadow .2s,border-color .2s}
+a.logo-card:hover{box-shadow:var(--shadow);border-color:#D4DEEC}
+.logo-card .lg{height:64px;display:grid;place-items:center}
+.logo-card .lg img{max-height:64px;max-width:150px;width:auto;filter:grayscale(1);opacity:.8;transition:filter .3s,opacity .3s}
+.logo-card:hover .lg img{filter:none;opacity:1}
+.logo-card .mono{width:64px;height:64px;border-radius:16px;background:var(--icon-bg);color:var(--primary);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:22px}
+.logo-card b{color:var(--navy);font-weight:600}
+.logo-card .type{font-size:12.5px;font-weight:600;color:var(--primary);background:var(--tint);border-radius:999px;padding:3px 10px}
+.logo-card p{font-size:14.5px;color:var(--muted)}
+.become{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:36px;box-shadow:var(--shadow)}
+.become h3{font-size:clamp(24px,2.6vw,30px);font-weight:600;margin-bottom:12px}
+.become > div > p{color:var(--muted);margin-bottom:22px}
+.offers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.offers li{display:flex;gap:12px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg)}
+.offers svg{width:22px;height:22px;color:var(--primary);flex:none;margin-top:2px}
+.offers b{display:block;font-weight:600;color:var(--navy);line-height:1.3}
+.offers span{font-size:14.5px;color:var(--muted)}
+@media (max-width:980px){.logos{grid-template-columns:repeat(2,1fr)}.become{grid-template-columns:1fr;padding:26px 20px}}
+@media (max-width:560px){.offers{grid-template-columns:1fr}}
+
+/* J-ECS */
+.jecs{background:linear-gradient(160deg,var(--ink),var(--navy));border-radius:var(--r-lg);padding:44px;display:grid;grid-template-columns:auto 1fr auto;gap:34px;align-items:center;color:var(--on-dark);position:relative;overflow:hidden}
+.jecs::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 39px,rgba(147,197,253,.06) 39px 40px)}
+.jecs > *{position:relative}
+.jecs img{width:100px;height:100px;border-radius:50%}
+.jecs small{display:block;color:var(--sky);font-weight:600;font-size:14px;margin-bottom:6px}
+.jecs h2{color:#fff;font-size:clamp(24px,2.8vw,34px);line-height:1.15;font-weight:600;margin-bottom:10px}
+.jecs p{max-width:58ch}
+@media (max-width:900px){.jecs{grid-template-columns:1fr;padding:30px 22px;gap:20px}.jecs img{width:80px;height:80px}}
+
+/* Formulaires */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-size:14.5px;font-weight:600;color:var(--text)}
+.opt{font-weight:400;color:var(--soft)}
+input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{font:inherit;font-size:16px;color:var(--text);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;width:100%;transition:border-color .15s,box-shadow .15s,background .15s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);background:#fff;box-shadow:0 0 0 4px rgba(37,99,235,.12)}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#DC2626;background:#FEF2F2}
+textarea{min-height:120px;resize:vertical}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-top:6px}
+.form-foot p{font-size:13.5px;color:var(--soft);max-width:40ch}
+.err{grid-column:1/-1;color:#B91C1C;font-size:14.5px}
+.hp{display:none}
+.motifs{display:flex;flex-wrap:wrap;gap:8px;grid-column:1/-1}
+.motifs label{position:relative;font-weight:500}
+.motifs input{position:absolute;opacity:0}
+.motifs span{display:inline-block;padding:10px 15px;border:1.5px solid var(--line);border-radius:999px;cursor:pointer;font-size:15px;background:#fff;transition:all .15s}
+.motifs input:checked + span{border-color:var(--primary);background:var(--tint);color:var(--primary)}
+.motifs input:focus-visible + span{outline:3px solid var(--accent);outline-offset:2px}
+@media (max-width:600px){.grid2{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{background:linear-gradient(180deg,var(--tint),var(--bg))}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:32px;align-items:stretch}
+.contact-side{background:linear-gradient(160deg,var(--ink),var(--navy));color:var(--on-dark);border-radius:var(--r-lg);padding:40px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.contact-side::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 39px,rgba(147,197,253,.06) 39px 40px)}
+.contact-side > *{position:relative}
+.contact-side h2{color:#fff;font-size:clamp(28px,3vw,38px);line-height:1.1;font-weight:600;margin-bottom:14px}
+.contact-side > p{color:var(--on-dark-2);margin-bottom:26px}
+.who-list{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:12px}
+.who-list li{display:flex;gap:12px;align-items:center;color:#DCE7F3}
+.who-list svg{width:20px;height:20px;color:var(--sky);flex:none}
+.coords{list-style:none;margin:auto 0 0;padding:22px 0 0;border-top:1px solid rgba(147,197,253,.2);display:grid;gap:14px}
+.coords li{display:flex;gap:14px;align-items:center}
+.coords .ci{width:42px;height:42px;border-radius:11px;background:rgba(147,197,253,.12);color:var(--sky);display:grid;place-items:center;flex:none}
+.coords .ci svg{width:20px;height:20px}
+.coords small{display:block;font-size:13px;color:#8EA4BF}
+.coords a,.coords .v{color:#fff;text-decoration:none;font-weight:500;word-break:break-word}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:0 30px 60px -36px rgba(29,53,87,.45);padding:34px}
+.form-card h3{font-size:24px;font-weight:600;margin-bottom:4px}
+.form-card > p{color:var(--soft);font-size:15px;margin-bottom:22px}
+@media (max-width:980px){.contact-grid{grid-template-columns:1fr}.contact-side{order:2;padding:30px 24px}.form-card{padding:26px 20px}}
+
+/* Pied de page */
+footer{background:var(--footer);color:#9CA3AF;padding:72px 0 32px;font-size:15.5px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+.foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.foot-brand .badge img{height:37px;width:auto}
+.foot-brand b{display:block;color:#fff;font-family:var(--display);font-size:21px;font-weight:600}
+.foot-brand span{color:#60A5FA;font-size:14px}
+.foot p{margin-bottom:14px;max-width:36ch}
+.foot h4{color:#60A5FA;font-size:15px;font-weight:600;margin:4px 0 18px;font-family:var(--body);letter-spacing:0}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot a{color:#9CA3AF;text-decoration:none}
+.foot a:hover{color:#fff}
+.socials{display:flex;gap:10px;margin-top:20px}
+.socials a{width:42px;height:42px;border-radius:11px;background:#1F2937;display:grid;place-items:center;color:#E5E7EB}
+.socials a:hover{background:var(--primary);color:#fff}
+.legal{margin-top:48px;padding-top:24px;border-top:1px solid #1F2937;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px}
+@media (max-width:900px){.foot{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.foot{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="m8 12.2 2.8 2.8L16.2 9.4"/></symbol>
+    <symbol id="i-audit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.5-4.5"/></symbol>
+    <symbol id="i-comptabilite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H7a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7.5z"/><path d="M14 2.5v5h5M9 12.5h6M9 16.5h6M9 8.5h2"/></symbol>
+    <symbol id="i-conseil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 17 6.5-6.5 4 4L21.5 6"/><path d="M15.5 6h6v6"/></symbol>
+    <symbol id="i-etudes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 6.5h8M8 11h.01M12 11h.01M16 11h.01M8 14.5h.01M12 14.5h.01M16 14.5h.01M8 18h.01M12 18h.01M16 18h.01"/></symbol>
+    <symbol id="i-fiscalite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 2.5h13v19l-3.2-2-3.3 2-3.3-2-3.2 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+    <symbol id="i-formation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m1.5 9 10.5-5 10.5 5L12 14z"/><path d="M5.5 11v5.5c3.5 2.5 9.5 2.5 13 0V11M22.5 9v6"/></symbol>
+    <symbol id="i-paie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20.5a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20.5a6.5 6.5 0 0 0-4-6"/></symbol>
+    <symbol id="i-creation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21.5h18M5 21.5V9l7-5 7 5v12.5M9.5 21.5v-6h5v6"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m1.5 9 10.5-5 10.5 5L12 14z"/><path d="M5.5 11v5.5c3.5 2.5 9.5 2.5 13 0V11"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18.5h6M10 21.5h4M12 2.5a6.5 6.5 0 0 0-3.8 11.8c.5.4.8 1 .8 1.7v.5h6V16c0-.7.3-1.3.8-1.7A6.5 6.5 0 0 0 12 2.5z"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="15" rx="2.5"/><path d="M2.5 9.5h19M16 14.5h2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4.5 5.5v6c0 5 3.3 8.6 7.5 10 4.2-1.4 7.5-5 7.5-10v-6z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 5.3a5.2 5.2 0 0 0-7.4 0L12 6.4l-1.1-1.1a5.2 5.2 0 0 0-7.4 7.4L12 21.2l8.5-8.5a5.2 5.2 0 0 0 0-7.4z"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="6"/><path d="m8.5 13.5-1.5 8 5-3 5 3-1.5-8"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.5v3a2 2 0 0 1-2.2 2A19.5 19.5 0 0 1 2.5 5.2 2 2 0 0 1 4.5 3h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.4 10.8a16 16 0 0 0 4.8 4.8l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a7.6 7.6 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 6 6 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.8a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm0 18.3a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.6c0-.9.6-1.1 1-1.1h2.6V1.6L14 1.5c-4 0-4.9 3-4.9 4.9v2.1H6.5v4H9.1v10h4.9v-10h3.3l.4-4z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5H3v7h4c0 4-2 6-4 6zM14 21c3 0 7-1 7-8V5h-7v7h4c0 4-2 6-4 6z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20.5a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20.5a6.5 6.5 0 0 0-4-6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 14h3M13.5 14h3M7.5 17.5h3"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="19" height="13.5" rx="2.5"/><path d="M8.5 7V5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2M2.5 12.5h19"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5h6a3.5 3.5 0 0 1 3.5 3.5v13a2.5 2.5 0 0 0-2.5-2.5h-7zM21.5 4.5h-6A3.5 3.5 0 0 0 12 8v13a2.5 2.5 0 0 1 2.5-2.5h7z"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1.4 1.4 0 0 0 2-2"/><path d="m14 14 2.5 2.5a1.4 1.4 0 0 0 2-2l-3.9-3.9a3 3 0 0 0-4.2 0l-.9.9a1.4 1.4 0 0 1-2-2l2.8-2.8a5.2 5.2 0 0 1 6.2-.8l.5.3a3 3 0 0 0 2.1.4L21 6"/><path d="m21 5 1 11h-2M3 5 2 16l6.5 6.5a1.4 1.4 0 0 0 2-2M3 6h8"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3.5"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3.5" width="18" height="17" rx="2.5"/><circle cx="8.5" cy="9" r="2"/><path d="m21 15.5-5-5-9.5 10"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15.1V8.9l5.2 3.1z"/></symbol>
+  </defs>
+</svg>
+<a href="#contenu" class="sr-only">Aller au contenu</a>
+
+<header class="site-header" id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#accueil" aria-label="AE-ECS, retour à l'accueil">
+      <span class="badge"><img src="/images/brand/logo-aeecs.png" alt="" width="74" height="34"></span>
+      <span><span class="brand-name">AE-ECS</span><span class="brand-sub">Association des Étudiants des ECS</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <ul class="nav-links" id="menu">
+      <li><a href="#association">L'association</a></li>
+      <li data-nav="activites"><a href="#activites">Activités</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#formation">Formation</a></li>
+      <li><a href="#alumni">Alumni</a></li>
+      <li><a href="#partenaires">Partenaires</a></li>
+      <li><a class="btn btn-primary" href="#contact">Nous contacter</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="contenu">
+<section class="hero" id="accueil">
+  <div class="wrap hero-grid">
+    <div>
+      <a class="now" id="now" href="#agenda" hidden><span class="dot"></span><span>En ce moment :</span><b id="now-title"></b></a>
+      <p class="eyebrow" id="eyebrow">ESCAE / INP-HB, Yamoussoukro</p>
+      <h1 data-site="accroche">La communauté des étudiants en Études Comptables Supérieures de l'INP-HB.</h1>
+      <p class="lede" data-site="presentation">L'AE-ECS représente les étudiants du cycle ECS de l'ESCAE, anime la vie de la filière et rapproche ses étudiants du monde professionnel.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-light" href="#activites" id="cta-acts">Voir nos activités<svg class="go"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost-light" href="#partenaires">Devenir partenaire</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="affiche" id="affiche" hidden role="region" aria-roledescription="carrousel" aria-label="À l'affiche">
+        <div class="aff-head"><svg width="18" height="18" style="color:var(--primary)"><use href="#i-calendar"/></svg><b>À l'affiche</b><span class="count" id="aff-count"></span>
+          <div class="aff-ctrl" id="aff-ctrl"><button type="button" id="aff-prev" aria-label="Précédent"><svg><use href="#i-arrow-l"/></svg></button><button type="button" id="aff-next" aria-label="Suivant"><svg><use href="#i-arrow"/></svg></button></div>
+        </div>
+        <div class="aff-track" id="aff-track" aria-live="polite"></div>
+        <div class="aff-dots" id="aff-dots"></div>
+      </div>
+      <div class="agenda" id="agenda-card" role="figure" aria-label="Les missions de l'AE-ECS">
+        <div class="agenda-head"><b><img src="/images/brand/logo-aeecs.png" alt="" width="52" height="24">Ordre du jour</b><span id="year-label">Année 2026</span></div>
+        <ol>
+          <li><div><b>Représenter les étudiants</b><span>Porter leur voix auprès de l'école et des partenaires</span></div></li>
+          <li><div><b>Animer la vie de la filière</b><span>Conférences, intégration, événements, entraide</span></div></li>
+          <li><div><b>Ouvrir les portes de l'entreprise</b><span>Stages, rencontres avec les cabinets, réseau des alumni</span></div></li>
+          <li><div><b>Porter la junior-entreprise J-ECS</b><span>Mettre les compétences des étudiants en pratique</span></div></li>
+        </ol>
+        <div class="agenda-foot"><span>Séance ouverte</span><em>à tous nos partenaires</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="association">
+  <div class="wrap assoc">
+    <div class="assoc-text">
+      <p class="kicker">L'association</p>
+      <h2>Une association au service des futurs experts de la finance</h2>
+      <div id="about-text"><p>L'Association des Étudiants des Études Comptables Supérieures (AE-ECS) rassemble les étudiants du cycle ECS de l'ESCAE de l'INP-HB de Yamoussoukro.</p></div>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><span class="ico"><svg><use href="#i-users"/></svg></span><div><h3>Représentation</h3><p>L'interlocuteur des étudiants ECS auprès de l'administration et des partenaires.</p></div></div>
+      <div class="pillar"><span class="ico"><svg><use href="#i-calendar"/></svg></span><div><h3>Vie associative</h3><p>Des activités tout au long de l'année qui font la cohésion de la filière.</p></div></div>
+      <div class="pillar"><span class="ico"><svg><use href="#i-briefcase"/></svg></span><div><h3>Insertion professionnelle</h3><p>Rencontres avec les cabinets et entreprises, stages, réseau des alumni.</p></div></div>
+      <div class="pillar"><span class="ico"><svg><use href="#i-cap"/></svg></span><div><h3>Excellence académique</h3><p>Entraide, partage de ressources et préparation des étudiants.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="activites" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker">Nos activités</p><h2>Une année rythmée par nos rendez-vous</h2></div>
+      <p class="lead" id="acts-intro">Chaque année, l'AE-ECS fait vivre la filière à travers des rendez-vous qui rassemblent étudiants, anciens et professionnels.</p>
+    </div>
+    <div class="acts" id="acts"></div>
+  </div>
+</section>
+
+<section class="section" id="agenda">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker">Agenda</p><h2>Nos prochains rendez-vous</h2></div>
+      <p class="lead">Les dates à retenir. Les événements en cours et à venir sont aussi affichés en haut du site.</p>
+    </div>
+    <div class="ev-tabs" role="tablist" id="ev-tabs" hidden>
+      <button role="tab" aria-selected="true" data-k="up">À venir</button>
+      <button role="tab" aria-selected="false" data-k="past">Passés</button>
+    </div>
+    <div class="ev-list" id="ev-list"></div>
+    <div class="empty" id="ev-empty">
+      <span class="ico"><svg><use href="#i-calendar"/></svg></span>
+      <div><h3 id="ev-empty-title">Les prochaines dates arrivent bientôt</h3><p>Suivez l'AE-ECS sur les réseaux sociaux pour être informé en premier, ou proposez-nous un événement en partenariat.</p></div>
+      <a class="btn btn-ghost" href="#contact" data-motif="Partenariat ou sponsoring">Proposer un événement</a>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="formation">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker">Formation ECS</p><h2>Le cycle des Études Comptables Supérieures</h2></div>
+      <p class="lead" id="f-presentation">Le cycle des Études Comptables Supérieures (ECS) de l'ESCAE forme les futurs cadres de la comptabilité, de l'audit et de la finance.</p>
+    </div>
+    <div class="formation">
+      <div class="facts-row" id="f-infos" hidden></div>
+      <div class="f-card"><h3><svg><use href="#i-book"/></svg>Domaines étudiés</h3><ul class="f-list" id="f-domaines"></ul></div>
+      <div class="f-card"><h3><svg><use href="#i-briefcase"/></svg>Débouchés</h3><ul class="f-list" id="f-debouches"></ul></div>
+      <div class="f-cta"><p>Vous envisagez de rejoindre le cycle ECS ? Posez vos questions aux étudiants qui le vivent.</p><div><a class="btn btn-primary" href="#contact" data-motif="Candidat à l'ECS">Poser une question</a><a class="btn btn-ghost" id="f-officiel" href="https://www.inphb.edu.ci" target="_blank" rel="noopener">Site officiel de l'INP-HB<svg><use href="#i-ext"/></svg></a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="bureau" hidden>
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">Le bureau</p>
+      <h2>Celles et ceux qui font vivre l'AE-ECS</h2>
+      <p class="lead" id="team-intro">Les étudiants élus qui font vivre l'association.</p>
+      <span class="mandat" id="mandat" hidden></span>
+    </div>
+    <ul class="people" id="team-list"></ul>
+  </div>
+</section>
+
+<section class="section white" id="alumni">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker">Nos alumni</p><h2>Ils sont passés par l'ECS</h2></div>
+      <p class="lead" id="alumni-intro">Ils sont passés par le cycle ECS et construisent aujourd'hui leur carrière dans l'audit, la finance et le conseil.</p>
+    </div>
+    <div class="alumni" id="alumni-list" hidden></div>
+    <div class="join">
+      <div>
+        <h3 id="join-title">Vous êtes diplômé de l'ECS ? Rejoignez le réseau.</h3>
+        <p>Restez en lien avec la filière et avec votre promotion.</p>
+        <ul class="ul">
+          <li><svg><use href="#i-users"/></svg>Retrouver vos camarades de promotion</li>
+          <li><svg><use href="#i-briefcase"/></svg>Accueillir des stagiaires et recruter</li>
+          <li><svg><use href="#i-mic"/></svg>Témoigner devant les étudiants</li>
+        </ul>
+      </div>
+      <form name="anciens" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="site-web" novalidate class="grid2" data-validate>
+        <input type="hidden" name="form-name" value="anciens">
+        <p class="hp"><label>Ne pas remplir <input name="site-web" tabindex="-1" autocomplete="off"></label></p>
+        <div class="field"><label for="a-nom">Nom complet</label><input type="text" id="a-nom" name="nom" autocomplete="name" required></div>
+        <div class="field"><label for="a-promo">Promotion</label><input type="text" id="a-promo" name="promotion" placeholder="Ex. 2019" required></div>
+        <div class="field"><label for="a-email">E-mail</label><input type="email" id="a-email" name="email" autocomplete="email" required></div>
+        <div class="field"><label for="a-poste">Poste et entreprise <span class="opt">(facultatif)</span></label><input type="text" id="a-poste" name="poste" placeholder="Ex. Auditeur, Cabinet X"></div>
+        <div class="field full"><label for="a-li">Profil LinkedIn <span class="opt">(facultatif)</span></label><input type="url" id="a-li" name="linkedin" placeholder="https://www.linkedin.com/in/…"></div>
+        <p class="err" hidden>Vérifiez les champs en rouge.</p>
+        <div class="form-foot"><p>Vos informations restent internes à l'AE-ECS.</p><button class="btn btn-primary" type="submit">Rejoindre le réseau</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="partenaires">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker">Nos partenaires</p><h2>Ils accompagnent la filière ECS</h2></div>
+      <p class="lead" id="partners-intro">Ils soutiennent l'AE-ECS et accompagnent la formation de la prochaine génération de professionnels de la finance.</p>
+    </div>
+    <div class="logos" id="logos" hidden></div>
+    <div class="become">
+      <div>
+        <h3 id="become-title">Devenez partenaire de l'AE-ECS</h3>
+        <p>Cabinets, entreprises, institutions : construisons ensemble des actions utiles aux étudiants et visibles pour votre structure.</p>
+        <a class="btn btn-primary" href="#contact" data-motif="Partenariat ou sponsoring">Discuter d'un partenariat<svg class="go"><use href="#i-arrow"/></svg></a>
+      </div>
+      <ul class="offers">
+        <li><svg><use href="#i-calendar"/></svg><div><b>Sponsoriser une activité</b><span>Conférences, journées carrière, cérémonies.</span></div></li>
+        <li><svg><use href="#i-briefcase"/></svg><div><b>Proposer stages et emplois</b><span>Diffusion directe aux étudiants ECS.</span></div></li>
+        <li><svg><use href="#i-mic"/></svg><div><b>Intervenir auprès des étudiants</b><span>Témoignages métiers, ateliers, études de cas.</span></div></li>
+        <li><svg><use href="#i-target"/></svg><div><b>Confier une mission à J&#8209;ECS</b><span>Les compétences de notre junior-entreprise.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="jecs">
+      <img src="/images/brand/logo-jecs.png" alt="Logo J-ECS" width="100" height="100">
+      <div><small>Notre junior-entreprise</small><h2>J-ECS met les compétences des étudiants au service des entreprises</h2><p>Audit et contrôle interne, tenue de comptabilité, conseil en gestion et études : des missions réelles, encadrées, qui préparent nos étudiants au métier.</p></div>
+      <a class="btn btn-light" id="jecs-link" href="https://juniorecs.juniorecsentreprise.workers.dev/" target="_blank" rel="noopener">Visiter J-ECS<svg><use href="#i-ext"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="wrap contact-grid">
+    <aside class="contact-side">
+      <h2>Écrivez à l'AE-ECS</h2>
+      <p>Le bureau lit chaque message et vous répond dans les meilleurs délais.</p>
+      <ul class="who-list">
+        <li><svg><use href="#i-handshake"/></svg>Entreprises, cabinets et sponsors</li>
+        <li><svg><use href="#i-cap"/></svg>Alumni de l'ECS</li>
+        <li><svg><use href="#i-book"/></svg>Futurs candidats et leurs familles</li>
+        <li><svg><use href="#i-users"/></svg>Associations et institutions</li>
+      </ul>
+      <ul class="coords" id="coords">
+        <li><span class="ci"><svg><use href="#i-pin"/></svg></span><div><small>Adresse</small><span class="v">ESCAE, INP-HB, Yamoussoukro, Côte d'Ivoire</span></div></li>
+      </ul>
+    </aside>
+    <div class="form-card">
+      <h3>Envoyer un message</h3>
+      <p>Choisissez l'objet de votre message pour qu'il arrive à la bonne personne.</p>
+      <form name="contact" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="site-web" novalidate class="grid2" id="contact-form" data-validate>
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp"><label>Ne pas remplir <input name="site-web" tabindex="-1" autocomplete="off"></label></p>
+        <div class="motifs" role="radiogroup" aria-label="Objet du message">
+          <label><input type="radio" name="objet" value="Partenariat ou sponsoring" checked><span>Partenariat ou sponsoring</span></label>
+          <label><input type="radio" name="objet" value="Stage ou recrutement"><span>Stage ou recrutement</span></label>
+          <label><input type="radio" name="objet" value="Alumni"><span>Alumni</span></label>
+          <label><input type="radio" name="objet" value="Candidat à l'ECS"><span>Candidat à l'ECS</span></label>
+          <label><input type="radio" name="objet" value="Autre"><span>Autre</span></label>
+        </div>
+        <div class="field"><label for="c-nom">Nom complet</label><input type="text" id="c-nom" name="nom" autocomplete="name" required></div>
+        <div class="field"><label for="c-org">Structure <span class="opt">(facultatif)</span></label><input type="text" id="c-org" name="structure" autocomplete="organization"></div>
+        <div class="field"><label for="c-email">E-mail</label><input type="email" id="c-email" name="email" autocomplete="email" required></div>
+        <div class="field"><label for="c-tel">Téléphone <span class="opt">(facultatif)</span></label><input type="tel" id="c-tel" name="telephone" autocomplete="tel"></div>
+        <div class="field full"><label for="c-msg">Votre message</label><textarea id="c-msg" name="message" required placeholder="Présentez-vous en quelques lignes et dites-nous comment avancer ensemble."></textarea></div>
+        <p class="err" hidden>Vérifiez les champs en rouge.</p>
+        <div class="form-foot"><p>Vos informations servent uniquement à vous répondre.</p><button class="btn btn-primary" type="submit">Envoyer le message<svg class="go"><use href="#i-arrow"/></svg></button></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="foot-brand"><span class="badge"><img src="/images/brand/logo-aeecs.png" alt="" width="80" height="37"></span><div><b>AE-ECS</b><span>Association des Étudiants des ECS</span></div></div>
+        <p>Association des Étudiants des Études Comptables Supérieures de l'ESCAE / INP-HB, Yamoussoukro.</p>
+      </div>
+      <div><h4>L'association</h4><ul><li><a href="#association">Qui sommes-nous</a></li><li data-nav="activites"><a href="#activites">Nos activités</a></li><li><a href="#agenda">Agenda</a></li><li data-nav="bureau"><a href="#bureau">Le bureau</a></li></ul></div>
+      <div><h4>Réseau</h4><ul><li><a href="#formation">Formation ECS</a></li><li><a href="#alumni">Alumni</a></li><li><a href="#partenaires">Partenaires</a></li><li><a href="https://juniorecs.juniorecsentreprise.workers.dev/" target="_blank" rel="noopener" class="jecs-href">J-ECS, notre junior-entreprise</a></li></ul></div>
+      <div><h4>Contact</h4><ul id="foot-contact"><li><a href="#contact">Écrire à l'AE-ECS</a></li></ul><div class="socials" id="socials"></div></div>
+    </div>
+    <div class="legal"><span>© <span id="year">2026</span> AE-ECS. Tous droits réservés.</span><span>aeecs.ci</span></div>
+  </div>
+</footer>
+
+<dialog class="viewer" id="viewer" aria-labelledby="v-title">
+  <div class="v-head"><div><h3 id="v-title"></h3><div class="meta" id="v-meta"></div></div><button class="v-close" id="v-close" aria-label="Fermer"><svg><use href="#i-x"/></svg></button></div>
+  <div class="v-body" id="v-body"></div>
+</dialog>
+
+<script>
+var $=function(s,c){return (c||document).querySelector(s);},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s));};
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function safeUrl(u){u=String(u||'').trim();return /^(https?:|mailto:|tel:|\/)/i.test(u)?u:'';}
+function icon(id,w){return '<svg'+(w?' width="'+w+'" height="'+w+'"':'')+' aria-hidden="true"><use href="#i-'+id+'"/></svg>';}
+function initials(n){var p=String(n||'').trim().split(/\s+/).filter(Boolean);if(!p.length)return 'AE';return (p[0][0]+(p.length>1?p[p.length-1][0]:'')).toUpperCase();}
+function get(p){return fetch(p,{cache:'no-cache'}).then(function(r){if(!r.ok)throw r;return r.json();});}
+function hideNav(k){$$('[data-nav="'+k+'"]').forEach(function(n){n.hidden=true;});}
+var REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var MOIS=['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+var MOISL=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+function parseD(s){var m=/^(\d{4})-(\d{2})-(\d{2})/.exec(String(s||''));return m?new Date(+m[1],+m[2]-1,+m[3]):null;}
+function fmtRange(a,b){if(!b||+a===+b)return a.getDate()+' '+MOISL[a.getMonth()]+' '+a.getFullYear();
+  if(a.getMonth()===b.getMonth()&&a.getFullYear()===b.getFullYear())return 'du '+a.getDate()+' au '+b.getDate()+' '+MOISL[b.getMonth()]+' '+b.getFullYear();
+  return 'du '+a.getDate()+' '+MOISL[a.getMonth()]+' au '+b.getDate()+' '+MOISL[b.getMonth()]+' '+b.getFullYear();}
+
+/* ---- Interface ---- */
+(function(){
+  var header=$('#header');function onScroll(){header.classList.toggle('scrolled',scrollY>24||$('#menu').classList.contains('open'));}onScroll();addEventListener('scroll',onScroll,{passive:true});
+  var tgl=$('.nav-toggle'),menu=$('#menu');
+  function closeMenu(){menu.classList.remove('open');tgl.setAttribute('aria-expanded','false');tgl.setAttribute('aria-label','Ouvrir le menu');onScroll();}
+  tgl.addEventListener('click',function(){var o=menu.classList.toggle('open');tgl.setAttribute('aria-expanded',o);tgl.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');onScroll();});
+  $$('a',menu).forEach(function(a){a.addEventListener('click',closeMenu);});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open'))closeMenu();});
+  var links=$$('.nav-links a[href^="#"]:not(.btn)');
+  if('IntersectionObserver' in window){var spy=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting)links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+en.target.id);});});},{rootMargin:'-45% 0px -50% 0px'});$$('main section[id]').forEach(function(s){spy.observe(s);});}
+  var y=new Date().getFullYear();$('#year').textContent=y;$('#year-label').textContent='Année '+y;
+  document.addEventListener('click',function(e){var a=e.target.closest('[data-motif]');if(!a)return;var r=$$('#contact-form input[name="objet"]').filter(function(i){return i.value===a.dataset.motif;})[0];if(r)r.checked=true;});
+  $$('form[data-validate]').forEach(function(f){var err=$('.err',f);
+    f.addEventListener('submit',function(e){var bad=null;$$('[required]',f).forEach(function(el){var v=el.value.trim(),ok=v&&(el.type!=='email'||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));el.setAttribute('aria-invalid',ok?'false':'true');if(!ok&&!bad)bad=el;});
+      $$('input[type=url]',f).forEach(function(el){if(el.value&&!/^https?:\/\//.test(el.value)){el.setAttribute('aria-invalid','true');if(!bad)bad=el;}});
+      if(bad){e.preventDefault();err.hidden=false;bad.focus();}else{var b=$('button[type=submit]',f);b.disabled=true;b.firstChild.textContent='Envoi en cours… ';}});
+    $$('input,textarea',f).forEach(function(el){el.addEventListener('input',function(){if(el.getAttribute('aria-invalid')==='true')el.setAttribute('aria-invalid','false');});});});
+})();
+
+/* ---- Visionneuse photos & vidéos ---- */
+var Viewer=(function(){
+  var dlg=$('#viewer'),body=$('#v-body'),act=null,idx=0,mode='grid',tab='photos',opener=null;
+  function vidEmbed(u){u=String(u||'').trim();var m;
+    if((m=/(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/))([\w-]{11})/.exec(u)))return '<div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/'+m[1]+'" title="Vidéo" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>';
+    if(/facebook\.com|fb\.watch/.test(u))return '<div class="vid"><iframe src="https://www.facebook.com/plugins/video.php?href='+encodeURIComponent(u)+'&show_text=false" title="Vidéo Facebook" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>';
+    if(/\.(mp4|webm)(\?|$)/i.test(u)&&safeUrl(u))return '<div class="vid"><video src="'+esc(u)+'" controls preload="metadata"></video></div>';
+    if(safeUrl(u))return '<a class="vid-link" href="'+esc(u)+'" target="_blank" rel="noopener">'+icon('play')+'Voir la vidéo</a>';return '';}
+  function photos(){return (act.photos||[]).filter(function(p){return safeUrl(p);});}
+  function videos(){return (act.videos||[]).filter(Boolean);}
+  function render(){
+    var ph=photos(),vd=videos(),h='';
+    if(mode==='single'){
+      h='<div class="lb"><img src="'+esc(ph[idx])+'" alt="Photo '+(idx+1)+' sur '+ph.length+' : '+esc(act.titre)+'">'+
+        (ph.length>1?'<button class="lb-nav lb-prev" data-go="-1" aria-label="Photo précédente">'+icon('arrow-l')+'</button><button class="lb-nav lb-next" data-go="1" aria-label="Photo suivante">'+icon('arrow')+'</button>':'')+'</div>'+
+        '<div class="lb-bar"><button data-back>'+icon('grid')+'Toutes les photos</button><span>'+(idx+1)+' / '+ph.length+'</span></div>';
+    } else {
+      if(act.description)h+='<p class="v-desc">'+esc(act.description)+'</p>';
+      if(ph.length&&vd.length)h+='<div class="v-tabs" role="tablist"><button role="tab" data-tab="photos" aria-selected="'+(tab==='photos')+'">Photos ('+ph.length+')</button><button role="tab" data-tab="videos" aria-selected="'+(tab==='videos')+'">Vidéos ('+vd.length+')</button></div>';
+      var t=ph.length&&vd.length?tab:(ph.length?'photos':'videos');
+      if(t==='photos'&&ph.length)h+='<div class="thumbs">'+ph.map(function(p,i){return '<button data-i="'+i+'" aria-label="Agrandir la photo '+(i+1)+'"><img src="'+esc(p)+'" alt="" loading="lazy"></button>';}).join('')+'</div>';
+      if(t==='videos'&&vd.length)h+='<div class="videos">'+vd.map(vidEmbed).join('')+'</div>';
+      if(!ph.length&&!vd.length)h+='<p class="v-desc">Les photos et vidéos de cette activité seront bientôt ajoutées.</p>';
+    }
+    body.innerHTML=h;body.scrollTop=0;
+  }
+  function open(a,from){act=a;idx=0;mode='grid';tab='photos';opener=from;
+    $('#v-title').textContent=a.titre;
+    $('#v-meta').innerHTML=[a.categorie,a.periode,a.edition?'Édition '+a.edition:''].filter(Boolean).map(function(m){return '<span>'+esc(m)+'</span>';}).join('');
+    render();if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');document.body.classList.add('lock');$('#v-close').focus();}
+  function close(){if(dlg.open)dlg.close();}
+  dlg.addEventListener('close',function(){document.body.classList.remove('lock');body.innerHTML='';if(opener)opener.focus();});
+  $('#v-close').addEventListener('click',close);
+  dlg.addEventListener('click',function(e){
+    if(e.target===dlg){close();return;}
+    var b;if((b=e.target.closest('[data-i]'))){idx=+b.dataset.i;mode='single';render();var n=$('.lb-next',body)||$('[data-back]',body);if(n)n.focus();}
+    else if((b=e.target.closest('[data-go]'))){var n2=photos().length;idx=(idx+ +b.dataset.go+n2)%n2;render();var f=$('[data-go="'+b.dataset.go+'"]',body);if(f)f.focus();}
+    else if(e.target.closest('[data-back]')){mode='grid';render();}
+    else if((b=e.target.closest('[data-tab]'))){tab=b.dataset.tab;render();}
+  });
+  dlg.addEventListener('keydown',function(e){
+    if(mode==='single'){var n=photos().length;
+      if(e.key==='ArrowRight'){idx=(idx+1)%n;render();e.preventDefault();}
+      else if(e.key==='ArrowLeft'){idx=(idx-1+n)%n;render();e.preventDefault();}
+}
+  });
+  dlg.addEventListener('cancel',function(e){if(mode==='single'){e.preventDefault();mode='grid';render();var t=$('.thumbs button',body);if(t)t.focus();}});
+  var sx=null;dlg.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  dlg.addEventListener('touchend',function(e){if(mode!=='single'||sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50){var n=photos().length;idx=(idx+(dx<0?1:-1)+n)%n;render();}sx=null;});
+  return {open:open};
+})();
+
+/* ---- Contenus (dossier content/, modifiables depuis /admin) ---- */
+get('content/site.json').then(function(s){
+  $$('[data-site]').forEach(function(el){var k=el.getAttribute('data-site');if(s[k])el.textContent=s[k];});
+  if(s.a_propos)$('#about-text').innerHTML=String(s.a_propos).split(/\n\s*\n/).map(function(p){return '<p>'+esc(p.trim())+'</p>';}).join('');
+  var tel=String(s.telephone||'').replace(/[^\d+]/g,''),wa=String(s.whatsapp||'').replace(/\D/g,'');if(wa.length===10)wa='225'+wa;
+  var rows=[],fc=['<li><a href="#contact">Écrire à l\'AE-ECS</a></li>'];
+  if(s.email){rows.push('<li><span class="ci">'+icon('mail')+'</span><div><small>E-mail</small><a href="mailto:'+esc(s.email)+'">'+esc(s.email)+'</a></div></li>');fc.push('<li><a href="mailto:'+esc(s.email)+'">'+esc(s.email)+'</a></li>');}
+  if(s.telephone){rows.push('<li><span class="ci">'+icon('phone')+'</span><div><small>Téléphone</small><a href="tel:'+esc(tel)+'">'+esc(s.telephone)+'</a></div></li>');fc.push('<li><a href="tel:'+esc(tel)+'">'+esc(s.telephone)+'</a></li>');}
+  if(wa)rows.push('<li><span class="ci">'+icon('wa')+'</span><div><small>WhatsApp</small><a href="https://wa.me/'+wa+'" target="_blank" rel="noopener">'+esc(s.whatsapp)+'</a></div></li>');
+  if(s.adresse)rows.push('<li><span class="ci">'+icon('pin')+'</span><div><small>Adresse</small><span class="v">'+esc(s.adresse)+'</span></div></li>');
+  $('#coords').innerHTML=rows.join('');$('#foot-contact').innerHTML=fc.join('');
+  $('#socials').innerHTML=[['linkedin','in','LinkedIn'],['facebook','fb','Facebook'],['instagram','ig','Instagram'],['youtube','yt','YouTube']].filter(function(x){return safeUrl(s[x[0]]);}).map(function(x){return '<a href="'+esc(safeUrl(s[x[0]]))+'" target="_blank" rel="noopener" aria-label="'+x[2]+'">'+icon(x[1],19)+'</a>';}).join('');
+  var ju=safeUrl(s.jecs_url);if(ju){$('#jecs-link').href=ju;$$('.jecs-href').forEach(function(a){a.href=ju;});}
+}).catch(function(){});
+
+/* Activités */
+get('content/activites.json').then(function(d){
+  var list=(d.activites||[]).filter(function(a){return a&&a.titre;});
+  if(!list.length){hideNav('activites');$('#cta-acts').href='#association';$('#cta-acts').firstChild.textContent="Découvrir l'association";return;}
+  $('#activites').hidden=false;if(d.introduction)$('#acts-intro').textContent=d.introduction;
+  $('#acts').innerHTML=list.map(function(a,i){
+    var ph=(a.photos||[]).filter(function(p){return safeUrl(p);}),vd=(a.videos||[]).filter(Boolean),cov=safeUrl(a.couverture)||ph[0]||'';
+    var chips=[a.periode?'<span class="chip">'+icon('calendar')+esc(a.periode)+'</span>':'',ph.length?'<span class="chip">'+icon('image')+ph.length+' photo'+(ph.length>1?'s':'')+'</span>':'',vd.length?'<span class="chip">'+icon('play')+vd.length+' vidéo'+(vd.length>1?'s':'')+'</span>':''].join('');
+    return '<button class="act-card" data-a="'+i+'" aria-label="'+esc(a.titre)+' : voir les photos et vidéos">'+(cov?'<img src="'+esc(cov)+'" alt="" loading="lazy">':'<span class="ph">'+icon('image')+'</span>')+
+      '<span class="txt">'+(chips?'<span class="chips">'+chips+'</span>':'')+'<h3>'+esc(a.titre)+'</h3>'+(a.description?'<span class="desc">'+esc(a.description)+'</span>':'')+'<span class="open">'+(ph.length||vd.length?'Voir les photos et vidéos':'Découvrir')+icon('arrow')+'</span></span></button>';
+  }).join('');
+  $('#acts').addEventListener('click',function(e){var b=e.target.closest('[data-a]');if(b)Viewer.open(list[+b.dataset.a],b);});
+}).catch(function(){hideNav('activites');});
+
+/* Agenda + bannière À l'affiche */
+get('content/evenements.json').then(function(d){
+  var today=new Date();today.setHours(0,0,0,0);
+  var all=(d.evenements||[]).filter(function(e){return e&&e.titre&&parseD(e.date);}).map(function(e){e._d=parseD(e.date);e._f=parseD(e.date_fin)||e._d;if(e._f<e._d)e._f=e._d;e._live=e._d<=today&&e._f>=today;return e;});
+  var up=all.filter(function(e){return e._f>=today;}).sort(function(a,b){return (b._live-a._live)||(a._d-b._d);});
+  var past=all.filter(function(e){return e._f<today;}).sort(function(a,b){return b._d-a._d;});
+  function daysTo(e){return Math.round((e._d-today)/864e5);}
+  function statusTxt(e){if(e._live)return 'En cours';var n=daysTo(e);return n===1?'Demain':'Dans '+n+' jours';}
+  /* liste agenda */
+  var list=$('#ev-list'),empty=$('#ev-empty'),tabs=$('#ev-tabs');
+  function row(e,isPast){var lk=safeUrl(e.lien);
+    return '<article class="ev'+(isPast?' past':'')+'"><div class="date"><b>'+e._d.getDate()+'</b><span>'+MOIS[e._d.getMonth()]+' '+e._d.getFullYear()+'</span></div><div>'+
+      '<span class="tag'+(e._live?' live':'')+'">'+(e._live?'<span class="dot"></span>':'')+esc([isPast?'':statusTxt(e),e.categorie].filter(Boolean).join(' · '))+'</span>'+
+      '<h3>'+esc(e.titre)+'</h3><div class="meta"><span>'+icon('calendar')+esc(fmtRange(e._d,+e._f!==+e._d?e._f:null))+'</span>'+(e.heure?'<span>'+icon('clock')+esc(e.heure)+'</span>':'')+(e.lieu?'<span>'+icon('pin')+esc(e.lieu)+'</span>':'')+'</div>'+(e.description?'<p>'+esc(e.description)+'</p>':'')+'</div>'+
+      '<div class="go-col">'+(lk?'<a class="btn btn-ghost btn-sm" href="'+esc(lk)+'" target="_blank" rel="noopener">'+(isPast?'Voir':'En savoir plus')+icon('arrow')+'</a>':'')+'</div></article>';}
+  function show(k){var l=k==='up'?up:past;$$('button',tabs).forEach(function(b){b.setAttribute('aria-selected',b.dataset.k===k);});
+    list.innerHTML=l.map(function(e){return row(e,k==='past');}).join('');empty.hidden=!!l.length;list.hidden=!l.length;
+    $('#ev-empty-title').textContent=k==='up'?'Les prochaines dates arrivent bientôt':'Aucun événement archivé pour le moment';}
+  if(up.length&&past.length){tabs.hidden=false;tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(b)show(b.dataset.k);});}
+  show(up.length||!past.length?'up':'past');
+  /* bandeau « en ce moment » */
+  var live=up.filter(function(e){return e._live;})[0];
+  if(live){$('#now-title').textContent=live.titre;$('#now').hidden=false;$('#eyebrow').hidden=true;}
+  /* carrousel */
+  var slides=up.slice(0,6);if(!slides.length)return;
+  $('#affiche').hidden=false;$('#agenda-card').hidden=true;
+  var track=$('#aff-track'),dots=$('#aff-dots'),cur=0,timer=null;
+  track.innerHTML=slides.map(function(e,i){var img=safeUrl(e.image),lk=safeUrl(e.lien);
+    return '<div class="slide'+(i===0?' on':'')+'" role="group" aria-roledescription="diapositive" aria-label="'+(i+1)+' sur '+slides.length+'"><div class="pic">'+(img?'<img src="'+esc(img)+'" alt="">':'<span class="ph">'+icon('calendar')+'</span>')+
+      '<span class="status'+(e._live?' live':'')+'">'+(e._live?'<span class="dot"></span>':'')+esc(statusTxt(e))+'</span></div>'+
+      '<div class="info"><div class="when"><span>'+icon('calendar')+esc(fmtRange(e._d,+e._f!==+e._d?e._f:null))+'</span>'+(e.lieu?'<span>'+icon('pin')+esc(e.lieu)+'</span>':'')+'</div><h3>'+esc(e.titre)+'</h3>'+(e.description?'<p>'+esc(e.description)+'</p>':'')+
+      '<div class="act">'+(lk?'<a class="btn btn-primary btn-sm" href="'+esc(lk)+'" target="_blank" rel="noopener">En savoir plus'+icon('arrow')+'</a>':'')+'<a class="btn btn-ghost btn-sm" href="#agenda">Tout l\'agenda</a></div></div></div>';}).join('');
+  $('#aff-count').textContent=slides.length>1?'· '+slides.length+' rendez-vous':'';
+  if(slides.length<2){$('#aff-ctrl').hidden=true;dots.hidden=true;return;}
+  dots.innerHTML=slides.map(function(_,i){return '<button type="button" aria-label="Aller au rendez-vous '+(i+1)+'"'+(i===0?' aria-current="true"':'')+' data-i="'+i+'"></button>';}).join('');
+  function go(i){cur=(i+slides.length)%slides.length;$$('.slide',track).forEach(function(s,j){s.classList.toggle('on',j===cur);});$$('button',dots).forEach(function(b,j){if(j===cur)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current');});}
+  function start(){if(REDUCE)return;stop();timer=setInterval(function(){go(cur+1);},6500);}
+  function stop(){if(timer)clearInterval(timer);timer=null;}
+  $('#aff-prev').addEventListener('click',function(){go(cur-1);start();});
+  $('#aff-next').addEventListener('click',function(){go(cur+1);start();});
+  dots.addEventListener('click',function(e){var b=e.target.closest('[data-i]');if(b){go(+b.dataset.i);start();}});
+  var box=$('#affiche');box.addEventListener('mouseenter',stop);box.addEventListener('mouseleave',start);box.addEventListener('focusin',stop);box.addEventListener('focusout',start);
+  var sx=null;track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50){go(cur+(dx<0?1:-1));start();}sx=null;});
+  start();
+}).catch(function(){});
+
+get('content/formation.json').then(function(f){
+  if(f.presentation)$('#f-presentation').textContent=f.presentation;
+  var inf=(f.infos||[]).filter(function(i){return i&&i.libelle&&i.valeur;});
+  if(inf.length){var el=$('#f-infos');el.innerHTML=inf.map(function(i){return '<div><small>'+esc(i.libelle)+'</small><b>'+esc(i.valeur)+'</b></div>';}).join('');el.hidden=false;}
+  [['domaines','#f-domaines'],['debouches','#f-debouches']].forEach(function(x){var l=(f[x[0]]||[]).filter(Boolean),ul=$(x[1]);if(!l.length){ul.closest('.f-card').hidden=true;return;}ul.innerHTML=l.map(function(t){return '<li>'+icon('check')+esc(t)+'</li>';}).join('');});
+  var o=safeUrl(f.lien_officiel),a=$('#f-officiel');if(o)a.href=o;else a.hidden=true;
+}).catch(function(){});
+
+get('content/bureau.json').then(function(d){
+  var list=(d.membres||[]).filter(function(m){return m&&m.nom;});if(!list.length){hideNav('bureau');return;}
+  $('#bureau').hidden=false;var md=$('#mandat');if(d.mandat){md.textContent='Mandat '+d.mandat;md.hidden=false;}
+  if(d.introduction)$('#team-intro').textContent=d.introduction;
+  $('#team-list').innerHTML=list.map(function(m){var p=safeUrl(m.photo),li=safeUrl(m.linkedin);
+    return '<li class="person"><div class="avatar">'+(p?'<img src="'+esc(p)+'" alt="Portrait de '+esc(m.nom)+'" loading="lazy">':'<span class="initials" aria-hidden="true">'+esc(initials(m.nom))+'</span>')+'</div><h3>'+esc(m.nom)+'</h3>'+(m.poste?'<span class="role">'+esc(m.poste)+'</span>':'')+(m.promotion?'<span class="sub">'+esc(m.promotion)+'</span>':'')+(li?'<a class="li" href="'+esc(li)+'" target="_blank" rel="noopener" aria-label="LinkedIn de '+esc(m.nom)+'">'+icon('in',17)+'</a>':'')+'</li>';}).join('');
+}).catch(function(){hideNav('bureau');});
+
+get('content/alumni.json').then(function(d){
+  if(d.introduction)$('#alumni-intro').textContent=d.introduction;
+  var list=(d.alumni||[]).filter(function(a){return a&&a.nom;});if(!list.length)return;
+  var el=$('#alumni-list');el.hidden=false;$('#join-title').textContent='Vous aussi, rejoignez le réseau des alumni.';
+  el.innerHTML=list.map(function(a){var p=safeUrl(a.photo),li=safeUrl(a.linkedin);
+    return '<article class="alum"><div class="alum-top"><div class="avatar">'+(p?'<img src="'+esc(p)+'" alt="Portrait de '+esc(a.nom)+'" loading="lazy">':'<span class="initials" aria-hidden="true">'+esc(initials(a.nom))+'</span>')+'</div><div><h3>'+esc(a.nom)+'</h3>'+(a.promotion?'<span class="promo">Promo '+esc(a.promotion)+'</span>':'')+'</div></div>'+
+      ((a.poste||a.entreprise)?'<p class="job">'+(a.poste?'<b>'+esc(a.poste)+'</b>':'')+(a.poste&&a.entreprise?' chez ':'')+esc(a.entreprise||'')+'</p>':'')+
+      (a.citation?'<blockquote>« '+esc(a.citation)+' »</blockquote>':'')+(li?'<a class="li" href="'+esc(li)+'" target="_blank" rel="noopener">'+icon('in',16)+'Voir le profil</a>':'')+'</article>';}).join('');
+}).catch(function(){});
+
+get('content/partenaires.json').then(function(d){
+  if(d.introduction)$('#partners-intro').textContent=d.introduction;
+  var l=(d.partenaires||[]).filter(function(p){return p&&p.nom;});if(!l.length)return;
+  var el=$('#logos');el.hidden=false;$('#become-title').textContent='Rejoignez nos partenaires';
+  el.innerHTML=l.map(function(p){var lg=safeUrl(p.logo),u=safeUrl(p.site);
+    var inner='<span class="lg">'+(lg?'<img src="'+esc(lg)+'" alt="Logo '+esc(p.nom)+'" loading="lazy">':'<span class="mono">'+esc(initials(p.nom))+'</span>')+'</span><b>'+esc(p.nom)+'</b>'+(p.type?'<span class="type">'+esc(p.type)+'</span>':'')+(p.description?'<p>'+esc(p.description)+'</p>':'');
+    return u?'<a class="logo-card" href="'+esc(u)+'" target="_blank" rel="noopener">'+inner+'</a>':'<div class="logo-card">'+inner+'</div>';}).join('');
+}).catch(function(){});
+</script>
+</body>
+</html>

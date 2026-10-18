@@ -1,0 +1,174 @@
+# Espace d'administration du site AE-ECS (Decap CMS)
+backend:
+  name: github
+  repo: J-ECS/aeecs-site
+  branch: main
+  commit_messages:
+    update: "Mise à jour : {{slug}}"
+    uploadMedia: "Ajout de l'image {{path}}"
+    deleteMedia: "Suppression de l'image {{path}}"
+
+locale: fr
+site_url: https://aeecs.ci
+display_url: https://aeecs.ci
+logo_url: /images/brand/logo-aeecs.png
+
+media_folder: images/activites
+public_folder: /images/activites
+
+collections:
+  - name: contenu
+    label: Contenu du site
+    editor:
+      preview: false
+    files:
+
+      - name: activites
+        label: Nos activités (photos et vidéos)
+        file: content/activites.json
+        fields:
+          - { name: introduction, label: "Texte d'introduction", widget: text, required: false }
+          - name: activites
+            label: Activités annuelles
+            label_singular: activité
+            widget: list
+            required: false
+            summary: "{{fields.titre}} — {{fields.periode}}"
+            hint: "Photos : format paysage, moins de 1 Mo chacune. Vidéos : collez un lien YouTube ou Facebook (évitez d'envoyer de gros fichiers vidéo)."
+            fields:
+              - { name: titre, label: "Nom de l'activité", widget: string }
+              - { name: periode, label: "Période habituelle (ex. Novembre)", widget: string, required: false }
+              - name: categorie
+                label: Catégorie
+                widget: select
+                required: false
+                options: ["Intégration", "Conférence", "Rencontre professionnelle", "Formation", "Cérémonie", "Sport et culture", "Solidarité", "Gala"]
+              - { name: edition, label: "Dernière édition (ex. 2025)", widget: string, required: false }
+              - { name: description, label: "Description", widget: text, required: false }
+              - { name: couverture, label: "Photo de couverture", widget: image, required: false, choose_url: false }
+              - { name: photos, label: "Photos", label_singular: photo, widget: list, required: false, field: { name: photo, label: Photo, widget: image, choose_url: false } }
+              - { name: videos, label: "Vidéos (liens YouTube ou Facebook)", label_singular: vidéo, widget: list, required: false, field: { name: video, label: "Lien de la vidéo", widget: string } }
+
+      - name: evenements
+        label: Agenda (bannière « À l'affiche »)
+        file: content/evenements.json
+        fields:
+          - name: evenements
+            label: Événements datés
+            label_singular: événement
+            widget: list
+            required: false
+            summary: "{{fields.date}} — {{fields.titre}}"
+            hint: "Les événements en cours et à venir défilent dans la bannière en haut du site. Ils passent automatiquement dans « Passés » après leur date de fin."
+            fields:
+              - { name: titre, label: "Titre", widget: string }
+              - { name: date, label: "Date de début", widget: datetime, date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: true }
+              - { name: date_fin, label: "Date de fin (si plusieurs jours)", widget: datetime, date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: true, required: false }
+              - { name: heure, label: "Heure (ex. 15 h – 18 h)", widget: string, required: false }
+              - { name: lieu, label: "Lieu", widget: string, required: false }
+              - name: categorie
+                label: Catégorie
+                widget: select
+                required: false
+                options: ["Intégration", "Conférence", "Rencontre professionnelle", "Formation", "Cérémonie", "Sport et culture", "Solidarité", "Gala", "Actualité"]
+              - { name: description, label: "Description courte", widget: text, required: false }
+              - { name: image, label: "Image (format paysage)", widget: image, required: false, choose_url: false, media_folder: "/images/evenements", public_folder: "/images/evenements" }
+              - { name: lien, label: "Lien (inscription, billetterie, article)", widget: string, required: false }
+
+      - name: alumni
+        label: Nos alumni
+        file: content/alumni.json
+        fields:
+          - { name: introduction, label: "Texte d'introduction", widget: text, required: false }
+          - name: alumni
+            label: Alumni mis en avant
+            label_singular: alumni
+            widget: list
+            required: false
+            summary: "{{fields.nom}} — {{fields.promotion}}"
+            hint: "Uniquement avec l'accord de la personne."
+            fields:
+              - { name: nom, label: "Nom et prénoms", widget: string }
+              - { name: promotion, label: "Promotion (ex. 2019)", widget: string, required: false }
+              - { name: poste, label: "Poste actuel", widget: string, required: false }
+              - { name: entreprise, label: "Entreprise", widget: string, required: false }
+              - { name: photo, label: "Photo", widget: image, required: false, choose_url: false, media_folder: "/images/alumni", public_folder: "/images/alumni" }
+              - { name: citation, label: "Message aux étudiants (facultatif)", widget: text, required: false }
+              - { name: linkedin, label: "Lien LinkedIn", widget: string, required: false }
+
+      - name: partenaires
+        label: Nos partenaires
+        file: content/partenaires.json
+        fields:
+          - { name: introduction, label: "Texte d'introduction", widget: text, required: false }
+          - name: partenaires
+            label: Partenaires
+            label_singular: partenaire
+            widget: list
+            required: false
+            hint: "N'ajoutez une structure qu'avec son accord."
+            summary: "{{fields.nom}} — {{fields.type}}"
+            fields:
+              - { name: nom, label: "Nom", widget: string }
+              - name: type
+                label: Type de partenariat
+                widget: select
+                required: false
+                options: ["Partenaire officiel", "Sponsor", "Cabinet partenaire", "Entreprise partenaire", "Institution", "Partenaire média"]
+              - { name: description, label: "Ce que nous faisons ensemble (1 phrase)", widget: string, required: false }
+              - { name: logo, label: "Logo (fond transparent de préférence)", widget: image, required: false, choose_url: false, media_folder: "/images/partenaires", public_folder: "/images/partenaires" }
+              - { name: site, label: "Site web", widget: string, required: false }
+
+      - name: bureau
+        label: Bureau
+        file: content/bureau.json
+        fields:
+          - { name: mandat, label: "Mandat (ex. 2026-2027). Vide = masqué.", widget: string, required: false }
+          - { name: introduction, label: "Texte de présentation", widget: text, required: false }
+          - name: membres
+            label: Membres du bureau
+            label_singular: membre
+            widget: list
+            required: false
+            summary: "{{fields.nom}} — {{fields.poste}}"
+            fields:
+              - { name: nom, label: "Nom et prénoms", widget: string }
+              - { name: poste, label: "Poste", widget: string, required: false }
+              - { name: promotion, label: "Promotion ou année", widget: string, required: false }
+              - { name: photo, label: "Photo (portrait carré)", widget: image, required: false, choose_url: false, media_folder: "/images/bureau", public_folder: "/images/bureau" }
+              - { name: linkedin, label: "Lien LinkedIn", widget: string, required: false }
+
+      - name: formation
+        label: Formation ECS
+        file: content/formation.json
+        fields:
+          - { name: presentation, label: "Présentation du cycle", widget: text }
+          - name: infos
+            label: Informations clés (durée, admission, diplôme…)
+            label_singular: information
+            widget: list
+            required: false
+            summary: "{{fields.libelle}} : {{fields.valeur}}"
+            fields:
+              - { name: libelle, label: "Libellé (ex. Durée)", widget: string }
+              - { name: valeur, label: "Valeur (ex. 3 ans)", widget: string }
+          - { name: domaines, label: "Domaines étudiés", label_singular: domaine, widget: list, required: false, field: { name: domaine, label: Domaine, widget: string } }
+          - { name: debouches, label: "Débouchés", label_singular: débouché, widget: list, required: false, field: { name: debouche, label: Débouché, widget: string } }
+          - { name: lien_officiel, label: "Lien vers la page officielle", widget: string, required: false }
+
+      - name: infos
+        label: Informations générales et contacts
+        file: content/site.json
+        fields:
+          - { name: accroche, label: "Titre principal de l'accueil", widget: string }
+          - { name: presentation, label: "Texte sous le titre", widget: text }
+          - { name: a_propos, label: "Texte « L'association »", widget: text, hint: "Laissez une ligne vide entre deux paragraphes." }
+          - { name: email, label: "E-mail (vide = masqué)", widget: string, required: false }
+          - { name: telephone, label: "Téléphone (vide = masqué)", widget: string, required: false }
+          - { name: whatsapp, label: "WhatsApp (vide = masqué)", widget: string, required: false }
+          - { name: adresse, label: "Adresse", widget: string, required: false }
+          - { name: linkedin, label: "Lien LinkedIn", widget: string, required: false }
+          - { name: facebook, label: "Lien Facebook", widget: string, required: false }
+          - { name: instagram, label: "Lien Instagram", widget: string, required: false }
+          - { name: youtube, label: "Lien YouTube", widget: string, required: false }
+          - { name: jecs_url, label: "Adresse du site J-ECS", widget: string, required: false }
