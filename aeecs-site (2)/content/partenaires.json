@@ -1,5 +1,27 @@
 {
   "introduction": "Ils soutiennent l'AE-ECS et accompagnent la formation de la prochaine génération de professionnels de la finance.",
+  "logos": [
+    "/images/partenaires/adenka.png",
+    "/images/partenaires/air-cote-divoire.png",
+    "/images/partenaires/azalai-fondation.png",
+    "/images/partenaires/ci-excelsior.png",
+    "/images/partenaires/conseil-cafe-cacao.png",
+    "/images/partenaires/deloitte.png",
+    "/images/partenaires/experts-comptables-ci.png",
+    "/images/partenaires/ey.png",
+    "/images/partenaires/forvis-mazars.png",
+    "/images/partenaires/kaera.png",
+    "/images/partenaires/kpmg.png",
+    "/images/partenaires/noom.png",
+    "/images/partenaires/perseus.png",
+    "/images/partenaires/petroci.png",
+    "/images/partenaires/pwc.png",
+    "/images/partenaires/saefi.png",
+    "/images/partenaires/san-rubber.png",
+    "/images/partenaires/sdma.png",
+    "/images/partenaires/totalenergies.png",
+    "/images/partenaires/unilever.png"
+  ],
   "partenaires": [
     {
       "nom": "Nos partenaires",
