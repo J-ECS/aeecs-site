@@ -1,4 +1,12 @@
 {
   "introduction": "Ils soutiennent l'AE-ECS et accompagnent la formation de la prochaine génération de professionnels de la finance.",
-  "partenaires": []
+  "partenaires": [
+    {
+      "nom": "Nos partenaires",
+      "type": "Partenaire officiel",
+      "description": "",
+      "logo": "/images/partenaires/Screenshot 2026-10-18 185059.png",
+      "site": ""
+    }
+  ]
 }
